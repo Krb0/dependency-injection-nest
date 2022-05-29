@@ -3,7 +3,9 @@ import { PowerService } from 'src/power/power.service';
 @Injectable()
 export class CpuService {
   constructor(private powerService: PowerService) {}
-  compute() {
-    this.powerService.supplyPower(100);
+  compute(a: number, b: number) {
+    const power = a * b;
+    this.powerService.supplyPower(power);
+    return power;
   }
 }
